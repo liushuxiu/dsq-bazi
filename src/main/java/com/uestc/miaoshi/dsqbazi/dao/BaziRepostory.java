@@ -13,4 +13,6 @@ public interface BaziRepostory extends JpaRepository<Bazi, Integer> {
            String rigan,  String rizhi,
            String shigan, String shizhi
            );
+
+    Bazi findByContent(String content);
 }

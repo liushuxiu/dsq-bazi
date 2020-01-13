@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: dsq-bazi
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/dsq?characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  #    freemarker配置
+  freemarker:
+    cache: false  #关闭模板缓存，方便测试
+    settings:
+      template_update_delay: 0  #检查模板更新延迟时间，设置为0表示立即检查，如果时间大于0会有缓存不方便进行模板测试
+    template-loader-path: classpath:/templates
+    charset: UTF-8
+    check-template-location: true
+    suffix: .ftl
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+
+
+
+
+
+
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: true
+    properties.hibernate.format_sql: true
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder: trace
+

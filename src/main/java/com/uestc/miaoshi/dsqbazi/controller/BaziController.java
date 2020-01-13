@@ -1,13 +1,16 @@
 package com.uestc.miaoshi.dsqbazi.controller;
 
+import com.google.gson.Gson;
 import com.uestc.miaoshi.dsqbazi.dao.BaziRepostory;
 import com.uestc.miaoshi.dsqbazi.model.Bazi;
 import com.uestc.miaoshi.dsqbazi.service.BaziService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-@RestController
+@Controller
+@RequestMapping
 public class BaziController {
     
     @Autowired
@@ -15,6 +18,13 @@ public class BaziController {
 
     @Autowired
     private BaziService service;
+
+    static Gson  gson = new Gson();
+
+    @GetMapping("/")
+    public String index() {
+       return "index";
+    }
 
     @GetMapping("/xx")
     public void insert() {
@@ -25,6 +35,12 @@ public class BaziController {
             }
         }).start();
        return;
+    }
+
+    @GetMapping("bazi")
+    public String getBazi(String bazi) {
+        Bazi content = repostory.findByContent(bazi);
+        return gson.toJson(content);
     }
 
     @GetMapping("/query")

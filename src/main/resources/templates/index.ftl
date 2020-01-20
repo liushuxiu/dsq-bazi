@@ -1,6 +1,6 @@
 <#assign dsq="${request.contextPath}">
 <!DOCTYPE HTML>
-<html>
+<html>in
 <head>
     <title>后台管理系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,7 +16,7 @@
         <!--<img src="/chinapost/Public/assets/img/top.png">-->
     </div>
 
-    <div class="dl-log">欢迎您，<span class="dl-log-user">root</span><a href="/chinapost/index.php?m=Public&a=logout" title="退出系统" class="dl-log-quit">[退出]</a>
+    <div class="dl-log">欢迎您，<span class="dl-log-user">root</span><a href="Public/login.html" title="退出系统" class="dl-log-quit">[退出]</a>
     </div>
 </div>
 <div class="content">

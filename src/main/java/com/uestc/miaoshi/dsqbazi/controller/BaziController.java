@@ -21,7 +21,7 @@ public class BaziController {
 
     static Gson  gson = new Gson();
 
-    @GetMapping("/")
+    @GetMapping("/index")
     public String index() {
        return "index";
     }
